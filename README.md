@@ -6,16 +6,16 @@ A distrubuted log aggregation service that collects and queries logs from differ
 
 To complete the task, I decided to follow the Model-View-Controller pattern using the Java SpringBoot framework. 
 
-#### 1. Model
+#### 1. Model (`src/main/java/com/sonatus/intern`)
 
 `Log.java` represents a single log that has fields `service_name`, `timestamp`, and `messsage` that follow the given formats. 
 `Response.java` represents a single log message with a timestamp that the GET request is expected to return.
 
-#### 2. Service
+#### 2. Service (`src/main/java/com/sonatus/intern`)
 
 `LogsService.java` handles storing and retrieving logs. To make the API thread-safe and support concurrent requests, I integrated the [Caffeine](https://github.com/ben-manes/caffeine) library, which provides an in-memory cache with built-in concurrency support and automatic eviction. In this application, logs are configured to expire after 1 hour.
 
-#### 3. Controller
+#### 3. Controller (`src/main/java/com/sonatus/intern`)
 
 `InternController.java` defines the RESTful API endpoints, supporting POST and GET requests in predefined formats.
 
@@ -55,7 +55,7 @@ curl "http://localhost:8080/logs?service=auth-service&start=2025-03-17T10:00:00Z
 
 ## Tests
 
-The `src/test/java` directory contains the `InternApplicationTests.java` file, which includes two tests I have written. The first verifies that the POST request works correctly, and the second test tests the full functionality of the API - from submitting logs to retrieving them using filters.
+The `src/test/java/com/sonatus/intern` directory contains the `InternApplicationTests.java` file, which includes two tests I have written. The first verifies that the POST request works correctly, and the second test tests the full functionality of the API - from submitting logs to retrieving them using filters.
 
 Run tests with 
 
