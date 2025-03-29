@@ -41,9 +41,7 @@ The API is now running on port `8080`. Access it through `http://localhost:8080/
 
 Example of a POST `cURL` command:
 ```bash
-curl -X POST http://localhost:8080/logs  \                                                                
-  -H "Content-Type: application/json" \
-  -d '{"service_name":"auth-service","timestamp":"2025-03-17T10:00:05Z","message":"User login successful"}'
+curl -X POST "http://localhost:8080/logs" -H "Content-Type: application/json" -d '{"service_name":"auth-service","timestamp":"2025-03-17T10:00:05Z","message":"User login successful"}'
 ```
 
 Example of a GET `cURL` command:
