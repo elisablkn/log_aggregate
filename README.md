@@ -55,7 +55,7 @@ curl "http://localhost:8080/logs?service=auth-service&start=2025-03-17T10:00:00Z
 
 The `src/test/java/com/sonatus/intern` directory contains the `InternApplicationTests.java` file, which includes two tests I have written. The first verifies that the POST request works correctly, and the second test tests the full functionality of the API - from submitting logs to retrieving them using filters.
 
-Run tests with 
+Run tests from the root directory with 
 
 ```bash
   mvn test
